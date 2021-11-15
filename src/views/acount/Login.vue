@@ -25,27 +25,57 @@
         </a-form-item>
       </a-form>
       <dir class="fs-12 text-center">
-        <a href="" class="color-white">忘记密码</a> |
-        <a href="" class="color-white">注册</a>
+        <a href=""
+           class="color-white"
+           @click="set()">忘记密码</a> |
+
+        <router-link to="/register">注册</router-link>
       </dir>
+      {{count}}
     </div>
   </div>
 </template>
 <script>
-import { reactive } from 'vue'
+
+//输入
+import { onMounted, reactive, toRefs, ref } from 'vue'
 export default {
+
   name: "Login",
+
+  //vue2.0写法
+  // data () {
+  //   return {
+  //     layout: {
+  //       labelCol: { span: 6 },
+  //       wrapperCol: { span: 14 },
+  //     }
+  //   }
+  // },
+
+  components: {},
+
+  //vue3.0写法
   setup () {
 
+    const number = ref(10);    //定义基础数据类型：number、string、boolear、null、undefault、symbol
+    console.log(number.value);
+
+    //类似于json对象的语法
     const formConfig = reactive({
       layout: {
-        labelCol: { span: 4 },
+        labelCol: { span: 15 },
         wrapperCol: { span: 14 },
       }
     })
 
+    //vue3.0多了一步转换
+    const data = toRefs(formConfig);
+    onMounted(() => { })
+
+    //输出
     return {
-      formConfig
+      ...data,
     }
   }
 }
