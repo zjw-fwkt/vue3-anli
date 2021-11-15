@@ -2,4 +2,14 @@
     width: 100vw;
     height: 100vh;
     background: #282828;
+    .form-wrap {
+        width: 285px;
+        margin: auto;
+        padding-top: 200px;
+        color: #fff;
+        label {
+            display: flex;
+            color: #fff;
+        }
+    }
 }
