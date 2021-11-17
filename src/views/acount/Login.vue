@@ -20,7 +20,7 @@
           <a-button type="primary"
                     html-type="submit"
                     block>
-            登录
+            <router-link to="/index" class="color-white">登录</router-link>
           </a-button>
         </a-form-item>
       </a-form>
